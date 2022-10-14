@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'photo/new'
-  get 'photo/edit'
-  get 'photo/show'
+  # get 'photo/new'
+  # get 'photo/edit'
+  # get 'photo/show'
   # get 'category/index'
   # get 'category/new'
   # get 'category/edit'
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # get "/categories", to: "categories#index"
   resources :category
   resources :photo
+  resources :comment, only: %i[destroy new create]
 end

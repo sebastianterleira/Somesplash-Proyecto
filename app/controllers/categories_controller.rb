@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to category_path
+      redirect_to categories_path
     else
       render "edit", status: :unprocessable_entity
     end

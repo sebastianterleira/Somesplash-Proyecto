@@ -1,0 +1,27 @@
+<h1><%= @category.name %></h1>
+<p><%= @category.description %></p>
+
+<% @photos.each do |photo|%>
+  <div> <%= image_tag photo.cover %> </div>
+  <div>
+    <%= photo.title%>
+    
+    <%= link_to "show", photo_path(photo) %>
+    <%= link_to "edit", edit_photo_path(photo) %>
+    <%= link_to "destroy", photo_path(photo), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>
+
+<% @comments.each do |comment|%>
+  <div>
+    <%= comment.body%><br/>
+    <p>Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round() %> days ago</p>
+    <%= link_to "destroy", comment_path(comment), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>

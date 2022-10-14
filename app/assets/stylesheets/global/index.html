@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./input.css">
+    <title>SE</title>
+</head>
+<body>
+    <section class="section-md">
+        <div class="container-md">
+          <h2>Inputs</h2>
+          <form>
+            <!-- INPUT -->
+            <div class="input-container">
+              <label for="email" class="text-xs light overline"
+                >Input label</label
+              >
+              <input
+                class="input"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="placeholder"
+              />
+              <span class="text-xs input__error">Error message</span>
+              <span class="text-sm light input__help">Input help text</span>
+            </div>
+  
+            <!-- SELECT -->
+            <div class="input-container">
+              <label for="country" class="text-xs light overline"
+                >Select your country</label
+              >
+              <select
+                name="country"
+                id="country"
+                class="text-md light select"
+                required
+              >
+                <option value="" hidden>Select one</option>
+                <option value="BO">Bolivia</option>
+                <option value="CO">Colombia</option>
+                <option value="EC">Ecuador</option>
+                <option value="PE">Peru</option>
+                <option value="VE">Venezuela</option>
+              </select>
+              <span class="text-xs input__error">Error message</span>
+              <span class="text-sm light input__help">Input help text</span>
+            </div>
+  
+            <!-- RADIO BUTTONS -->
+  
+            <div class="flex flex-column">
+              <p class="text-xs light overline">Select one option:</p>
+              <div class="flex gap-0.5">
+                <div class="radio">
+                  <input
+                    type="radio"
+                    name="option"
+                    id="option-1"
+                    class="radio__input"
+                  />
+                  <div class="radio__text-group">
+                    <label for="option-1" class="text-sm light radio__label"
+                      >Option 1</label
+                    >
+                    <span class="text-xs light radio__help">Help text</span>
+                  </div>
+                </div>
+                <div class="radio">
+                  <input
+                    type="radio"
+                    name="option"
+                    id="option-2"
+                    class="radio__input"
+                  />
+                  <div class="radio__text-group">
+                    <label for="option-2" class="text-sm light radio__label"
+                      >Option 2</label
+                    >
+                    <span class="text-xs light radio__help">Help text</span>
+                  </div>
+                </div>
+                <div class="radio">
+                  <input
+                    type="radio"
+                    name="option"
+                    id="option-3"
+                    class="radio__input"
+                  />
+                  <div class="radio__text-group">
+                    <label for="option-3" class="text-sm light radio__label"
+                      >Option 3</label
+                    >
+                    <span class="text-xs light radio__help">Help text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- CHECKBOXES -->
+  
+            <div class="flex flex-column">
+              <p class="text-xs light overline">Select as many as you want:</p>
+              <div class="flex gap-0.5">
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="check-1"
+                    id="check-1"
+                    class="checkbox__input"
+                  />
+                  <div class="checkbox__text-group">
+                    <label for="check-1" class="text-sm light checkbox__label"
+                      >Option 1</label
+                    >
+                    <span class="text-xs light checkbox__help">Help text</span>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="check-2"
+                    id="check-2"
+                    class="checkbox__input"
+                  />
+                  <div class="checkbox__text-group">
+                    <label for="check-2" class="text-sm light checkbox__label"
+                      >Option 2</label
+                    >
+                    <span class="text-xs light checkbox__help">Help text</span>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="check-3"
+                    id="check-3"
+                    class="checkbox__input"
+                  />
+                  <div class="checkbox__text-group">
+                    <label for="check-3" class="text-sm light checkbox__label"
+                      >Option 3</label
+                    >
+                    <span class="text-xs light checkbox__help">Help text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+</body>
+</html>

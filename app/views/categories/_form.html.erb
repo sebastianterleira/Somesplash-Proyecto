@@ -1,0 +1,20 @@
+<%=form_with model: category do |form|%>
+    <%if category.errors.any? %>
+      <ul>
+        <% category.errors.full_messages.each do |error|%>
+        <li> <%=error%> </li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.label :name%>
+    <%= form.text_field :name%>
+    <%= form.label :description%>
+    <%= form.text_area :description%>
+    <%= form.label :cover%>
+    <%= form.file_field :cover%>
+    <%= image_tag(category.cover) if category.cover.attached?%>
+    <div class="buttons_edit_category">
+      <%= form.submit 'Create Category' %>
+      <%# <%= link_to "Back", category_path, class: "btn_back_category"%>
+    </div>
+  <%end%>

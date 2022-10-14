@@ -1,7 +1,70 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+puts "Seeding - START"
+
+Category.destroy_all
+Photo.destroy_all
+
+puts "Seeding Categories"
+
+animals = Category.create(name: "Animals", description: "Beautiful animals is their nature")
+# animals.cover.attach(io: File.open('db/images/category5.png'), filename: 'category5.png')
+scenarios = Category.create(name: "Scenarios", description: "Incredible beautiful landscapes")
+# scenarios.cover.attach(io: File.open('db/images/category2.png'), filename: 'category2.png')
+foot = Category.create(name: "Foots", description: "Food for the tummy")
+# foot.cover.attach(io: File.open('db/images/category4.png'), filename: 'category4.png')
+people = Category.create(name: "People", description: "People from all over the world")
+# people.cover.attach(io: File.open('db/images/category3.png'), filename: 'category3.png')
+technologies = Category.create(name: "Technologies", description: "The wonderful magic of technology")
+# technologies.cover.attach(io: File.open('db/images/category1.png'), filename: 'category1.png')
+
+# puts "Seeding Photos"
+
+photo_1 = Photo.create(title: "Purple Lake",
+                      description: "Let’s celebrate the magic of Mother Earth — with images of everything our planet has to offer.",
+											category: scenarios
+)
+photo_2 = Photo.create(title: "A cute little orange bird", description: "This little bird needs to mate...", category: animals )
+photo_3 = Photo.create(title: "A cat on the street", description: "Corduroy Miguel is corduroy Miguel", category: animals )
+photo_4 = Photo.create(title: "furry bears", description: "for the oldest", category: animals )
+photo_5 = Photo.create(title: "The tigress of the east", description: "A new dawn has come, With La Tigresa del Oriente, That! Rico, daddy, sing and enchant your people, tigress", category: animals )
+photo_6 = Photo.create(title: "", description: "", category: technologies )
+photo_7 = Photo.create(title: "", description: "", category:  )
+photo_8 = Photo.create(title: "", description: "", category:  )
+photo_9 = Photo.create(title: "", description: "", category:  )
+photo_10 = Photo.create(title: "", description: "", category:  )
+photo_11 = Photo.create(title: "", description: "", category:  )
+photo_12 = Photo.create(title: "", description: "", category:  )
+photo_13 = Photo.create(title: "", description: "", category:  )
+photo_14 = Photo.create(title: "", description: "", category:  )
+photo_15 = Photo.create(title: "", description: "", category:  )
+photo_16 = Photo.create(title: "", description: "", category:  )
+photo_17 = Photo.create(title: "", description: "", category:  )
+photo_18 = Photo.create(title: "", description: "", category:  )
+photo_19 = Photo.create(title: "", description: "", category:  )
+photo_20 = Photo.create(title: "", description: "", category:  )
+photo_21 = Photo.create(title: "", description: "", category:  )
+photo_22 = Photo.create(title: "", description: "", category:  )
+photo_23 = Photo.create(title: "", description: "", category:  )
+photo_24 = Photo.create(title: "", description: "", category:  )
+photo_25 = Photo.create(title: "", description: "", category:  )
+photo_26 = Photo.create(title: "", description: "", category:  )
+photo_27 = Photo.create(title: "", description: "", category:  )
+photo_28 = Photo.create(title: "", description: "", category:  )
+photo_29 = Photo.create(title: "", description: "", category:  )
+photo_30 = Photo.create(title: "", description: "", category:  )
+photo_31 = Photo.create(title: "", description: "", category:  )
+photo_32 = Photo.create(title: "", description: "", category:  )
+photo_33 = Photo.create(title: "", description: "", category:  )
+photo_1.cover.attach(io: File.open('db/images/image1.png'), filename: 'image1.png')
+photo_2.cover.attach(io: File.open('db/images/image2.png'), filename: 'image2.png')
+photo_3.cover.attach(io: File.open('db/images/image3.png'), filename: 'image3.png')
+photo_4.cover.attach(io: File.open('db/images/image4.png'), filename: 'image4.png')
+photo_5.cover.attach(io: File.open('db/images/image5.png'), filename: 'image5.png')
+photo_6.cover.attach(io: File.open('db/images/image6.png'), filename: 'image6.png')
+photo_7.cover.attach(io: File.open('db/images/image7.png'), filename: 'image7.png')
+photo_8.cover.attach(io: File.open('db/images/image8.png'), filename: 'image8.png')
+photo_9.cover.attach(io: File.open('db/images/image9.png'), filename: 'image9.png')
+photo_10.cover.attach(io: File.open('db/images/image10.png'), filename: 'image10.png')
+photo_11.cover.attach(io: File.open('db/images/image11.png'), filename: 'image11.png')
+photo_12.cover.attach(io: File.open('db/images/image12.png'), filename: 'image12.png')
+photo_13.cover.attach(io: File.open('db/images/image13.png'), filename: 'image13.png')
+photo_14.cover.attach(io: File.open('db/images/image14.png'), filename: 'image14.png')

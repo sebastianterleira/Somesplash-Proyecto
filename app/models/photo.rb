@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
+  has_one_attached :cover
   belongs_to :category, counter_cache: true
-  # has_one_attached :cover
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true, length: { in: 0..100, message: 'Max 100 characteres' }

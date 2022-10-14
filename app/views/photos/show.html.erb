@@ -1,0 +1,28 @@
+<h1><%=@photo.title%></h1>
+<p><%= @photo.description%> </p>
+<p>Updated at <%= @photo.updated_at.strftime('%B %d,%Y')%> </p>
+
+<div> <%= image_tag @photo.cover %> </div>
+
+<%= form_with model: @comment do |form| %>
+  <div>
+    <%= form.text_field :body %>
+  </div>
+
+  <br/><br/>
+  <%= form.submit %>
+<% end %>
+
+
+<p> Comments </p>
+
+<% @comments.each do |comment|%>
+  <div>
+    <%= comment.body%><br/>
+    <p>Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round() %> days ago</p>
+    <%= link_to "destroy", comment_path(comment), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>

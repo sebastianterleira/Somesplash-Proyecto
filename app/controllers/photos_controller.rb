@@ -1,4 +1,4 @@
-class PhotoController < ApplicationController
+class PhotosController < ApplicationController
   def new
     @photo = Photo.new
   end
@@ -6,7 +6,7 @@ class PhotoController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      redirect_to photo_path(@photo)
+      redirect_to photos_path(@photo)
     else
       render :new, status: :unprocessable_entity
     end

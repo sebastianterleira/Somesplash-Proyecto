@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
@@ -24,7 +24,7 @@ class CategoryController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to categories_path
+      redirect_to category_path
     else
       render "edit", status: :unprocessable_entity
     end
@@ -33,6 +33,7 @@ class CategoryController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @photos = @category.photos
+    @comments = @category.comments
   end
 
   def destroy

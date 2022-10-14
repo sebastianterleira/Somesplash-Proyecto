@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-  # get 'photo/new'
-  # get 'photo/edit'
-  # get 'photo/show'
-  # get 'category/index'
-  # get 'category/new'
-  # get 'category/edit'
-  # get 'category/show'
-  # get "/categories", to: "categories#index"
-  resources :category
-  resources :photo
-  resources :comment, only: %i[destroy new create]
+  resources :categories
+  resources :photos
+  resources :comments, only: %i[destroy new create]
 end

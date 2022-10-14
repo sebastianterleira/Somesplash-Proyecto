@@ -1,7 +1,6 @@
 class CategoryController < ApplicationController
   def index
     @categories = Category.all
-
   end
 
   def new
@@ -33,13 +32,14 @@ class CategoryController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @photos = @category.photos
   end
 
   def destroy
-    @cateogry = Cateogry.find(params[:id])
-    @cateogry.destroy
+    @category = Category.find(params[:id])
+    @category.destroy
 
-    redirect_to categories_path, status: :see_other
+    redirect_to category_path, status: :see_other
   end
 
   private

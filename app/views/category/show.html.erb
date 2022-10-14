@@ -1,2 +1,15 @@
-<h1>Category#show</h1>
-<p>Find me in app/views/category/show.html.erb</p>
+<h1><%= @category.name %></h1>
+<p><%= @category.description %></p>
+
+<% @photos.each do |photo|%>
+  <div>
+    <%= photo.title%>
+    
+    <%= link_to "show", photo_path(photo) %>
+    <%= link_to "edit", edit_photo_path(photo) %>
+    <%= link_to "destroy", photo_path(photo), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>

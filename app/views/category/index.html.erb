@@ -4,6 +4,11 @@
     <%= category.name%>
     <p><%= category.photos.size%> photos</p>
     <p><%= category.description%> photos</p>
+    <%= link_to "show", category_path(category) %>
+    <%= link_to "edit", edit_category_path(category) %>
+    <%= link_to "destroy", category_path(category), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
   </div>
-  <%link_to ""Destroy", %>
 <% end %>

@@ -79,31 +79,31 @@ h6 {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
-  word-spacing: 1.5px;
-  transform: uppercase;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .button-bs {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  word-spacing: 1.25px;
-  transform: uppercase;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
 }
 
 .button-sm {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
-  word-spacing: 1.25px;
-  transform: uppercase;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
 }
 
 .overline-bs {
   font-size: 0.75rem;
   line-height: 1rem;
-  word-spacing: 1.5px;
-  transform: uppercase;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 /* Shadows */

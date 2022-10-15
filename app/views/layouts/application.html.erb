@@ -11,14 +11,21 @@
   </head>
 
   <body>
-    <header class='header'>
-        <%= form_with url: search_path, class:"header_search" , local: true, method: 'get' do|form| %>
+
+  <header class="header">
+    <nav class="navbar ">
+    <% link_to "Somesplash", category_path, class: "text_white"%>
+    </nav>
+    <%= form_with url: search_path, class:"header_search" , local: true, method: 'get' do|form| %>
         <%= form.label :search, class: "label_search" %>
         <%= form.text_field :query, class: "input_search" %>
       <% end %> 
-      </div> 
-    </header>
+  </header>
     <%= yield %>
-  </body> 
-  
+  <footer class="footer" >
+    <div clas="footer__content">
+      Build with ♥ by
+    </div>
+    </footer>
+  </body>
 </html>

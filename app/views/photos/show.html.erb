@@ -1,5 +1,6 @@
 <h1><%=@photo.title%></h1>
 <p><%= @photo.description%> </p>
+
 <p>Updated at <%= @photo.updated_at.strftime('%B %d,%Y')%> </p>
 
 <div> <%= image_tag @photo.cover %> </div>

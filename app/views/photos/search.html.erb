@@ -1,0 +1,24 @@
+<div class="header_categories">
+  <div class="header_categories-titles">
+  <h1>Search Resutls</h1>
+<br/><br/>
+
+<p>Search term: <%= @query %></p>
+<p><%= @photos.size %> photos found</p>
+<br/><br/>
+
+</div>
+<% @photos.each do |photo|%>
+  <%= photo.title%>
+  <p><%= photo.comments.size%> comments</p>
+  <div> <%= image_tag photo.cover %> </div>
+  <div>
+    
+    <%= link_to "show", photo_path(photo) %>
+    <%= link_to "edit", edit_photo_path(photo) %>
+    <%= link_to "destroy", photo_path(photo), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>

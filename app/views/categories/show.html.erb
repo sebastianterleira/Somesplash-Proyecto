@@ -1,6 +1,8 @@
 <h1><%= @category.name %></h1>
 <p><%= @category.description %></p>
-
+</div>
+  <%= link_to "New Photo", new_photo_path(category_id: @category.id)%>
+</div>
 <% @photos.each do |photo|%>
   <div> <%= image_tag photo.cover %> </div>
   <div>
@@ -14,7 +16,7 @@
       }%>
   </div>
 <% end %>
-
+<p>COMMENTS</p>
 <% @comments.each do |comment|%>
   <div>
     <%= comment.body%><br/>

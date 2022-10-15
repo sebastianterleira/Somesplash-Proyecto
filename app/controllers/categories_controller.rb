@@ -43,8 +43,13 @@ class CategoriesController < ApplicationController
     redirect_to category_path, status: :see_other
   end
 
-  private
+  def search
+    @query = params [:query].downcase
+    @categories = category.where("LOWER(name) LIKE ?" "%#{query}%")
 
+  end
+  private
+ 
   def category_params
     params.require(:category).permit(:name, :description, :cover)
   end

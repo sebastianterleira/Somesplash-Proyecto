@@ -1,7 +1,12 @@
-<h1><%= @category.name %></h1>
-<p><%= @category.description %></p>
-</div>
-  <%= link_to "New Photo", new_photo_path(category_id: @category.id)%>
+<div class="header_categories">
+  <div class="header_categories-titles">
+  <h1>Search Resutls</h1>
+<br/><br/>
+
+<p>Search term: <%= @query %></p>
+<p><%= @categories.size %> categories found</p>
+<br/><br/>
+
 </div>
 <% @photos.each do |photo|%>
   <div> <%= image_tag photo.cover %> </div>

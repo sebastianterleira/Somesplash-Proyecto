@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <header class='header'>
+        <%= form_with url: search_path, class:"header_search" , local: true, method: 'get' do|form| %>
+        <%= form.label :search, class: "label_search" %>
+        <%= form.text_field :query, class: "input_search" %>
+      <% end %> 
+      </div> 
+    </header>
     <%= yield %>
-  </body>
+  </body> 
+  
 </html>

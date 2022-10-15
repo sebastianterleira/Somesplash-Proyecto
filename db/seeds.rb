@@ -19,6 +19,7 @@ categories = [animals, scenarios, foot, people, technologies]
 
 puts "Seeding Photos"
 photos = []
+
 photos.push(Photo.create(title: "Purple Lake",description: "Let’s celebrate the magic of Mother Earth — with images of everything our planet has to offer.", category: scenarios))
 photos.push(Photo.create(title: "A cute little orange bird", description: "This little bird needs to mate...", category: animals ))
 photos.push(Photo.create(title: "A cat on the street", description: "Corduroy Miguel is corduroy Miguel", category: animals ))

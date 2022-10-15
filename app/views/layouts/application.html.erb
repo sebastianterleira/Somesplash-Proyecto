@@ -13,14 +13,16 @@
   <body>
 
   <header class="header">
-    <nav class="navbar ">
-    <% link_to "Somesplash", category_path, class: "text_white"%>
+    <nav class="navbar py-1">
+      <img src="/images/somesplash.png" alt="SOMESPLASH" class="navbar__links" >
+      <a href="/categories/1">
+        <button class="button button--default button--sm">SEARCH</button>
+      </a>
     </nav>
-    <%= form_with url: search_path, class:"header_search" , local: true, method: 'get' do|form| %>
-        <%= form.label :search, class: "label_search" %>
-        <%= form.text_field :query, class: "input_search" %>
-      <% end %> 
   </header>
+      <%# <%= form_with url: search_path, class:"header_search" , local: true, method: 'get' do|form| %>
+        <%# <%= form.text_field :query, class: "input_search", placeholder: "SEARCH"  %> 
+      <%# <% end %>  
     <%= yield %>
   <footer class="footer" >
     <div clas="footer__content">

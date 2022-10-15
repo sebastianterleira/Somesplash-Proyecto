@@ -17,6 +17,21 @@
   </div>
 <% end %>
 <p>COMMENTS</p>
+
+<%# <%form_with model: @comment |form| %>
+  <%# <div> %>
+    <%# <%= form.text_area :body%> 
+  <%# </div> %>  
+
+  <%# <%= form.submit "COMMENT"%>  
+<%# <%end %> 
+
+<%= form_with url: "/comments", method: :post do |form| %>
+  
+  <%= form.text_area :body %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <% @comments.each do |comment|%>
   <div>
     <%= comment.body%><br/>

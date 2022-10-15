@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <header class="header">
+    <nav class="navbar ">
+    <% link_to "Somesplash", category_path, class: "text_white"%>
+    </nav>
+  </header>
     <%= yield %>
+  <footer class="footer" >
+    <div clas="footer__content">
+      Build with ♥ by
+    </div>
+    </footer>
   </body>
 </html>

@@ -6,42 +6,42 @@
     max-width: 640px;
     padding: 0 16px;
     margin: auto;
-  }
+}
   
-  .container-md {
+.container-md {
     max-width: 768px;
     padding: 0 16px;
     margin: auto;
-  }
+}
   
-  .container-lg {
+.container-lg {
     max-width: 1024px;
     padding: 0 16px;
     margin: auto;
-  }
+}
   
-  .container-xl {
+.container-xl {
     max-width: 1248;
     padding: 0 16px;
     margin: auto;
-  }
+}
   
   /* Sections */
   
-  .section-sm {
+.section-sm {
     /* margin-top: 32px;
     margin-bottom: 32px; */
     margin: 32px 0;
-  }
+}
   
-  .section-md {
+.section-md {
     margin: 48px 0;
-  }
+}
   
-  .section-lg {
+.section-lg {
     margin: 96px 0;
-  }
+}
   
-  .section-xl {
+.section-xl {
     margin: 144px 0;
-  }
+}

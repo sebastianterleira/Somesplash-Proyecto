@@ -18,27 +18,5 @@
 <% end %>
 <p>COMMENTS</p>
 
-<%# <%form_with model: @comment |form| %>
-  <%# <div> %>
-    <%# <%= form.text_area :body%> 
-  <%# </div> %>  
+<%= render "comments/form", entity: @category%>
 
-  <%# <%= form.submit "COMMENT"%>  
-<%# <%end %> 
-
-<%= form_with url: "/comments", method: :post do |form| %>
-  
-  <%= form.text_area :body %>
-  <%= form.submit "Search" %>
-<% end %>
-
-<% @comments.each do |comment|%>
-  <div>
-    <%= comment.body%><br/>
-    <p>Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round() %> days ago</p>
-    <%= link_to "destroy", comment_path(comment), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      }%>
-  </div>
-<% end %>

@@ -31,6 +31,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    puts "SHOW CATEGORY"
     @category = Category.find(params[:id])
     @photos = @category.photos
     @comments = @category.comments

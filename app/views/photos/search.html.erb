@@ -1,24 +1,29 @@
 <div class="header_categories">
   <div class="header_categories-titles">
-  <h1>Search Results</h1>
-<br/><br/>
-
-<p>Search term: <%= @query %></p>
-<p><%= @photos.size %> photos found</p>
-<br/><br/>
+    <h1 class="head-bs bold text-gray-500 py-1 px-1">Search</h1>
+    <p class="content-sm regular color-gray-700 px-1"><%= @photos.size %> photos found</p>
 
 </div>
 <% @photos.each do |photo|%>
-  <%= photo.title%>
-  <p><%= photo.comments.size%> comments</p>
-  <div> <%= image_tag photo.cover %> </div>
-  <div>
-    
-    <%= link_to "show", photo_path(photo) %>
-    <%= link_to "edit", edit_photo_path(photo) %>
-    <%= link_to "destroy", photo_path(photo), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      }%>
-  </div>
+  <div class="cards-list py-1 px-1 size-category">
+      <div class="card shadow-lg">
+        <div class="card__header">
+          <% if photo.cover.attached? %>
+            <%= image_tag photo.cover %> 
+          <%end%>
+          <div class="head-sm semibold ft-Mont px-1 pt-0.8">
+           <p><%= photo.title %> </p>
+           </div>
+          <p class="content-sm regular color-gray-400 px-1"><%= photo.comments.size%> comments</p>
+          <div class="flex aling-righ">
+            <%= link_to "", photo_path(photo), class: "button-circular svg-show" %>
+            <%= link_to "", edit_photo_path(photo), class: "button-circular svg-edit" %>
+            <%= link_to "", photo_path(photo), class: "button-circular svg-trash", data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              }%>
+          </div>
+        </div>
+      </div>
+    </div>
 <% end %>

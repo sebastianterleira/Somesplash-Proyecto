@@ -1,24 +1,15 @@
-<h1><%=@photo.title%></h1>
-<p><%= @photo.description%> </p>
+<h1 class="head-sm semibold ft-Mont px-1"><%=@photo.title%></h1>
+<p class="content-bs regular px-1"><%= @photo.description%> </p>
 
-<p>Updated at <%= @photo.updated_at.strftime('%B %d,%Y')%> </p>
+<p class="content-sm regular color-gray-300 ml-1">Updated at <%= @photo.updated_at.strftime('%B %d,%Y')%> </p>
 
-<div> <%= image_tag @photo.cover %> </div>
-
-<p> Comments </p>
-
+<div class="cards-list py-1 px-1 size-category">
+  <div class="card">
+    <div class="card-header">
+  <% if @photo.cover.attached? %>
+    <%= image_tag @photo.cover %> 
+  <%end%>
 <%= render "form2" , photo:@photo%>
-
-
-<%# 
-<% @comments.each do |comment|%>
-  <%# <div> %>
-    <%# <%= comment.body%>
-    <%# <br/> %> 
-    <%# <p>Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round() days ago</p> %> 
-    <%# <%= link_to "destroy", photo_comment_path(comment), data: { %>
-        <%# turbo_method: :delete, %>
-        <%# turbo_confirm: "Are you sure?" %>
-      <%# }%>
-  <%# </div> %>
-<%# <% end %>
+    </div>
+  </div>
+</div>

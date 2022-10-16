@@ -1,19 +1,27 @@
-<h1>Categories</h1>
+<h1 class="head-bs regular py-1 ft-Mont">Categories</h1>
 </div>
-  <%=link_to "New Category", new_category_path, class: "btn_new_category"%>
+<button class="button button--default button--sm bg-secondary-300">
+  <%=link_to "New Category", new_category_path, class: "btn_new_category text-decoration-none text-white"%>
+  </button>
 </div>
 <% @categories.each do |category|%>
   
-  <div>
+  <div class="cards-list py-1 px-1 size-category">
+    <div class="card shadow-lg">
+      <div class="card__header">
     <div> <%= image_tag category.cover %> </div>
-    <%= category.name%>
-    <p><%= category.photos.size%> photos</p>
-    <p><%= category.description%> photos</p>
-    <%= link_to "show", category_path(category) %>
-    <%= link_to "edit", edit_category_path(category) %>
-    <%= link_to "destroy", category_path(category), data: {
+    <div class="head-sm semibold ft-Mont px-1 pt-0.8"> <%= category.name %> </div>
+    <p class="content-sm regular color-gray-300 px-1"><%= category.photos.size%> photos</p>
+    <p class="content-bs regular px-1"><%= category.description%> photos</p>
+    <div class="flex aling-righ">
+    <%= link_to "", category_path(category), class: "button-circular svg-show" %>
+    <%= link_to "", edit_category_path(category), class: "button-circular svg-edit" %>
+    <%= link_to "", category_path(category), class: "button-circular svg-trash", data: {
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"
       }%>
+      </div>
+      </div>
+    </div>
   </div>
 <% end %>

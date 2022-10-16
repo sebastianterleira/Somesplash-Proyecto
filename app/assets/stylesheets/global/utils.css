@@ -40,20 +40,27 @@
       padding-right: 1rem;
     }
 
-  .svg-social {
-    background-image: url("/images/github.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   .px-custom {
       display: inline-block;
       padding-left: 0.5rem;
       padding-right: 0.75rem;
   }
 
+  .px-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+  .py-0\.4 {
+    padding-bottom: 0.25rem;
+  }
+
   .text-aling-r {
     text-align: right;
+  }
+
+  .text-gray-500 {
+    color: #17171C;
   }
   
   .py-1 {
@@ -155,4 +162,17 @@
      background-image: url("/images/trash.svg");
      background-position: center;
      background-repeat: no-repeat;
+  }
+
+  .svg-social {
+    background-image: url("/images/github.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .botton-flex {
+    flex-direction: column;
+    justify-self: center;
+    align-content: center;
+    gap: 10px;
   }

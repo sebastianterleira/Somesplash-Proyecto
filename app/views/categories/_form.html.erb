@@ -6,15 +6,15 @@
         <% end %>
       </ul>
     <%end%>
-    <%= form.label :name%>
-    <%= form.text_field :name%>
-    <%= form.label :description%>
-    <%= form.text_area :description%>
-    <%= form.label :cover%>
-    <%= form.file_field :cover%>
+    <div class="overline-bs regular px-1 py-4"> <%= form.label :name%> </div>
+    <div class="input-container shadow-xs px-1"> <%= form.text_field :name, class: "input" %> </div>
+    <div class="overline-bs regular px-1 py-4"> <%= form.label :description%> </div>
+    <div class="input-container shadow-xs px-1"> <%= form.text_area :description, class: "input"%> </div>
+    <div class="overline-bs regular px-1 py-4"> <%= form.label :cover%> </div>
+    <div class="px-1"> <%= form.file_field :cover%>
     <%= image_tag(category.cover) if category.cover.attached?%>
-    <div class="buttons_edit_category">
-      <%= form.submit 'Save category' %>
-      <%= link_to "Back", categories_path, class: "btn_back_category"%>
-    </div>
+    <div class="buttons_edit_category py-1 flex flex-column px-1 botton-flex">
+      <%= form.submit 'Save category', class: "button button--default button--sm bg-gray text-white overline-bs" %>
+      <%= link_to "Back", categories_path, class: "btn_back_category button button--default button--sm text-decoration-none"%>
+  </div>
   <%end%>

@@ -40,6 +40,10 @@ class PhotosController < ApplicationController
     redirect_to category_path(@photo.category), status: :see_other
   end
 
+  def init_search
+    @photo = Photo.new
+  end
+
   def search
     @query = params[:query].downcase
     @photos = Photo.where("LOWER(title) LIKE ?", "%#{@query}%")

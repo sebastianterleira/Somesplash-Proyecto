@@ -1,0 +1,22 @@
+<%= form_with model: [photo,@comment] do |form| %>
+  <div>
+    <%= form.text_area :body%>
+  </div>
+
+  <br/><br/>
+  <%= form.submit "COMMENT"%>
+
+<% end %>
+
+<% photo.comments.each do |comment|%>
+  <div>
+    <%= comment.body%><br/>
+    <% if comment.created_at? %>
+      <p>Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round()%> days ago </p>  
+    <%end%>
+    <%#= link_to "destroy", photo_comment_path(comment), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>

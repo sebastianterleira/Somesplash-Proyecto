@@ -1,5 +1,5 @@
 .footer {
-    background-color: var(--gray-600);
+    background-color: #F2F2F2;
   }
   
   .footer__content {
@@ -10,3 +10,19 @@
     gap: 2em;
     padding: 3em 0;
   }
+
+  .aling-center {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    align-content: space-around;
+  }
+
+  .social {
+    display: flex;
+    gap: 22px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: space-between;
+}

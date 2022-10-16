@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # resources :categories
-  # resources :photos
-  # resources :comments, only: %i[destroy new create]
   resources :categories do
     resources :comments, only: %i[index new create destroy]
   end

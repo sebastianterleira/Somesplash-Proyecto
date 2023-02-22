@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SomesplashC8Team03Week10</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+  <header class="header">
+    <nav class="navbar py-1">
+
+      <a href="/categories"><img src="/images/somesplash.png" alt="SOMESPLASH" class="navbar__link size-logo" > </a>
+      <a class="text-decoration-none" href="/init_search">
+
+        <button class="button button--default button--sm">SEARCH</button>
+      </a>
+    </nav>
+  </header>
+
+
+    <%= yield %>
+  <footer class="footer py-1" >
+      <p class="content-sm regular secondary-500 text-aling-c">
+        Build with ♥ by
+      </p>
+      <div clas="social flex-row">
+      <a class="button-cuadrado svg-social" href="https://github.com/SebastianTerleira" target="_blank"></a>
+        <p class="content-x-sm regular secondary-500 px-custom">
+        Sebastian Terleira
+        </p>
+        <a class="button-cuadrado svg-social" href="https://github.com/JesusBarboza1994" target="_blank"></a>
+        <p class="content-x-sm regular secondary-500 px-custom">
+        Jesús Barbosa
+        </p>
+        </div>
+        <div class="text-aling-c">
+        <a class="button-cuadrado svg-social" href="#" target="_blank"></a>
+        <p class="content-x-sm regular secondary-500 px-custom">
+        Crhistoff Echevarria
+        </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

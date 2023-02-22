@@ -1,0 +1,41 @@
+<h1 class="head-bs semibold py-1 ft-Mont px-1 ml-1"><%= @category.name %></h1>
+<p class="content-bs regular px-1"><%= @category.description %></p>
+<div>
+<button class="button button--default button--sm bg-secondary-300 text-decoration-none ml-1 my-0.5">
+  <%= link_to "NEW PHOTO", new_photo_path(category_id: @category.id), class: "btn_new_category text-decoration-none text-white" %>
+</button>
+</div>
+
+<div class = "flex-column">
+  <% @photos.each do |photo|%>
+    <div class="cards-list py-1 px-1 size-category">
+      <div class="card shadow-lg">
+        <div class="card__header">
+          <% if photo.cover.attached? %>
+            <%= image_tag photo.cover, class: "img-fit" %> 
+          <%end%>
+          <div class="head-sm semibold ft-Mont px-1 pt-0.8"> <%= photo.title %> </div>
+          <p class="content-sm regular color-gray-400 px-1"><%= photo.comments.size%> comments</p>
+          <div class="flex aling-righ">
+            <%= link_to "", photo_path(photo), class: "button-circular svg-show" %>
+            <%= link_to "", edit_photo_path(photo), class: "button-circular svg-edit" %>
+            <%= link_to "", photo_path(photo), class: "button-circular svg-trash", data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              }%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= render "comments/form", entity: @category%>
+</div>
+
+
+
+
+    
+
+
+
+

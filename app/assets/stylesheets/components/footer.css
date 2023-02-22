@@ -1,0 +1,28 @@
+.footer {
+    background-color: #F2F2F2;
+  }
+  
+  .footer__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em 0;
+  }
+
+  .aling-center {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    align-content: space-around;
+  }
+
+  .social {
+    display: flex;
+    gap: 22px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: space-between;
+}

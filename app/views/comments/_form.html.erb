@@ -1,0 +1,23 @@
+
+<%= form_with model: [entity,@comment] do |form| %>
+
+ <div class="input-container shadow-xs px-1"> <%= form.text_area :body , placeholder: "Some respectful comment here.", class: "input"%>
+  <br/>
+  <div class="buttons_edit_category py-1 flex flex-column px-1 botton-flex">
+  <%= form.submit "COMMENT", class: "button button--default button--sm bg-gray text-white overline-bs"%>
+  </div>
+<% end %>
+<p head-x-sm bold ft-Mont>Comments</p>
+<% @comments.each do |comment|%>
+  <div class="flex-column border-bottom-2">
+    <p class="limit"><%= comment.body%></p>
+    <br/>
+    <div class="flex space-b flex-row">
+      <p class="color-gray-300 content-sm">Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round() %> days ago</p>
+      <%= link_to "", category_comment_path(comment), class: "button-circular svg-trash", data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        }%>
+    </div>
+  </div>
+<% end %>

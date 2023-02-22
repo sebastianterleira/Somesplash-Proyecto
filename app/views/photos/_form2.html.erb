@@ -1,0 +1,27 @@
+<%= form_with model: [photo,@comment] do |form| %>
+  <div>
+    <div class="input-container shadow-xs px-1 py-1"> <%= form.text_area :body , placeholder: "Some respectful comment here.", class: "input"%>
+  </div>
+  <br/>
+  <div class="buttons_edit_category py-1 flex flex-column px-1 botton-flex">
+  <%= form.submit "COMMENT", class: "button button--default button--sm bg-gray text-white overline-bs"%>
+  </div>
+
+<% end %>
+
+<p class="head-bs semibold py-1 ft-Mont"> Comments </p>
+<% photo.comments.each do |comment|%>
+  <div class="flex-column border-bottom-2">
+    <p class="limit"><%= comment.body%></p>
+    <br/>
+    <div class="flex space-b flex-row">
+      <% if comment.created_at? %>
+        <p class="color-gray-300 content-sm">Send <%= (((comment.created_at - DateTime.now)*-1)/60/60/24).round()%> days ago </p>  
+      <%end%>
+    </div>
+    <%#= link_to "destroy", photo_comment_path(comment), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }%>
+  </div>
+<% end %>
